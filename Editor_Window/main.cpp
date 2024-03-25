@@ -4,6 +4,10 @@
 #include "framework.h"
 #include "Editor_Window.h"
 
+#include "..\\MyEngine_SOURCE\\myApplication.h"
+
+Application app;
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -26,7 +30,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
 	// 깃허브 테스트
-	
+	app.test();
 	// TODO: 여기에 코드를 입력합니다.
 
 	// 전역 문자열을 초기화합니다.
@@ -44,20 +48,27 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 	MSG msg;
 
-	// 기본 메시지 루프입니다:
-	while (GetMessage(&msg, nullptr, 0, 0))
+	while (true)
 	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
+			if (msg.message == WM_QUIT)
+				break;
+
+			if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+		}
+		else
+		{
+			
 		}
 	}
 
 	return (int) msg.wParam;
 }
-
-
 
 //
 //  함수: MyRegisterClass()
