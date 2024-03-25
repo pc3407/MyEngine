@@ -1,5 +1,5 @@
 #pragma once
-#include "CommonInclude.h"
+#include "myGameObject.h"
 
 namespace my
 {
@@ -20,8 +20,7 @@ namespace my
 		HWND mHwnd;
 		HDC mHdc;
 
-		float mSpeed;
-		float mX;
-		float mY;
+		//플레이어
+		GameObject mPlayer;
 	};
 }
