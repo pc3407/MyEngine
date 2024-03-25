@@ -3,6 +3,13 @@
 
 namespace my
 {
+	enum Shape
+	{
+		RECTANGLE,
+		ELLIPSE,
+		NONE,
+	};
+
 	class GameObject
 	{
 	public:
@@ -19,6 +26,24 @@ namespace my
 			mY = y;
 		}
 
+		void SetBrush(COLORREF color)
+		{
+			mBrush = (HBRUSH)CreateSolidBrush(color);
+		}
+
+		void SetShape(Shape shape)
+		{
+			mShape = shape;
+		}
+
+		void SetKey(BYTE left, BYTE right, BYTE up, BYTE down)
+		{
+			leftKey = left;
+			rightKey = right;
+			upKey = up;
+			downKey = down;
+		}
+
 		float GetPositionX() { return mX; }
 		float GetPositionY() { return mY; }
 
@@ -26,5 +51,15 @@ namespace my
 		// 게임오브젝트의 좌표
 		float mX;
 		float mY;
+
+		HBRUSH mBrush;
+		HBRUSH mOldBrush;
+
+		Shape mShape;
+
+		BYTE leftKey;
+		BYTE rightKey;
+		BYTE upKey;
+		BYTE downKey;
 	};
 }

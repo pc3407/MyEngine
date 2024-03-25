@@ -22,5 +22,6 @@ namespace my
 
 		//플레이어
 		GameObject mPlayer;
+		GameObject mPlayer2;
 	};
 }
