@@ -1,6 +1,7 @@
 #include "myApplication.h"
 #include "myInput.h"
 #include "myTime.h"
+#include "mySceneManager.h"
 
 namespace my
 {
@@ -25,7 +26,7 @@ namespace my
 		createBuffer(width, height);
 		initializeEtc();
 
-		mPlayer.SetPosition(0, 0);
+		SceneManager::Initialize();
 	}
 	void Application::Run()
 	{
@@ -38,7 +39,7 @@ namespace my
 		Input::Update();
 		Time::Update();
 
-		mPlayer.Update();
+		SceneManager::Update();
 	}
 	void Application::LateUpdate()
 	{
@@ -49,7 +50,7 @@ namespace my
 		clearRenderTarger();
 
 		Time::Render(mBackHdc);
-		mPlayer.Render(mBackHdc);
+		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
 	}

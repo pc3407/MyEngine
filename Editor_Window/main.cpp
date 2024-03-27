@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 
 #include "..\\MyEngine_SOURCE\\myApplication.h"
+#include "..\\MyEngine_Window\\myLoadScene.h"
 
 my::Application application;
 
@@ -125,6 +126,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   //load Scenes
+   my::LoadScenes();
 
    return TRUE;
 }

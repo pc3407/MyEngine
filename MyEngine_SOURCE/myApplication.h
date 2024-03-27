@@ -1,5 +1,5 @@
 #pragma once
-#include "myGameObject.h"
+#include "CommonInclude.h"
 
 namespace my
 {
@@ -32,8 +32,5 @@ namespace my
 
 		UINT mWidth;
 		UINT mHeight;
-
-		//플레이어
-		GameObject mPlayer;
 	};
 }
