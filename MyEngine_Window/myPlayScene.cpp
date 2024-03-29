@@ -1,5 +1,8 @@
 #include "myPlayScene.h"
 #include "myGameObject.h"
+#include "myPlayer.h"
+#include "myTransform.h"
+#include "mySpriteRenderer.h"
 
 namespace my
 {
@@ -13,11 +16,49 @@ namespace my
 	}
 	void PlayScene::Initialize()
 	{
-		for (size_t i = 0; i < 100; i++)
 		{
-			GameObject* obj = new GameObject();
-			obj->SetPosition(rand() % 1600, rand() % 900);
-			AddGameObject(obj);
+			Player* p1 = new Player();
+			Transform* tr
+				= p1->AddComponent<Transform>();
+			tr->SetPos(800, 450);
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= p1->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+
+			AddGameObject(p1);
+		}
+
+		{
+			Player* p1 = new Player();
+			Transform* tr
+				= p1->AddComponent<Transform>();
+			tr->SetPos(300, 450);
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= p1->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+
+			AddGameObject(p1);
+		}
+
+		{
+			Player* p1 = new Player();
+			Transform* tr
+				= p1->AddComponent<Transform>();
+			tr->SetPos(100, 650);
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= p1->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+
+			AddGameObject(p1);
 		}
 	}
 	void PlayScene::Update()

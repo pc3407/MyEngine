@@ -22,6 +22,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myTime.cpp">
       <Filter>Helpers</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myComponent.cpp">
+      <Filter>Component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)mySpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myTransform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)myApplication.h">
@@ -48,6 +53,11 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myTime.h">
       <Filter>Helpers</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myComponent.h">
+      <Filter>Component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)mySpriteRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="High Level Interface">
@@ -64,6 +74,9 @@
     </Filter>
     <Filter Include="Helpers">
       <UniqueIdentifier>{591c7a2b-c0a8-4ee3-8fe8-6dfc4b4a167b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{44041690-0a38-4bf0-a34f-266c007d42b8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
